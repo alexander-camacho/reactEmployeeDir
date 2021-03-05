@@ -17,24 +17,23 @@ const employees = [
 
 function Table() {
     return (
-        <table>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-            </tr>
-            <tr>
-                <td>{employees[0].firstName}</td>
-                <td>{employees[0].lastName}</td>
-            </tr>
-            <tr>
-                <td>{employees[1].firstName}</td>
-                <td>{employees[1].lastName}</td>
-            </tr>
-            <tr>
-                <td>{employees[2].firstName}</td>
-                <td>{employees[2].lastName}</td>
-            </tr>
-        </table>
+        <div>
+
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                {employees.map((value, index) => {
+                    return <tr>
+                        <td key={index}>{value.firstName}</td>
+                        <td key={index}>{value.lastName}</td>
+                    </tr>
+                })}
+            </table>
+            <button>Sort</button>
+            <button>Filter</button>
+        </div>
     )
 }
 
