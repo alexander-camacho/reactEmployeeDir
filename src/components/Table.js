@@ -1,5 +1,20 @@
 import React from "react"
 
+const employees = [
+    {
+        firstName: "George",
+        lastName: "Washington"
+    },
+    {
+        firstName: "Abraham",
+        lastName: "Lincoln"
+    },
+    {
+        firstName: "John",
+        lastName: "Adams"
+    }
+]
+
 function Table() {
     return (
         <table>
@@ -8,12 +23,16 @@ function Table() {
                 <th>Last Name</th>
             </tr>
             <tr>
-                <td>Alex</td>
-                <td>Camacho</td>
+                <td>{employees[0].firstName}</td>
+                <td>{employees[0].lastName}</td>
             </tr>
             <tr>
-                <td>John</td>
-                <td>Smith</td>
+                <td>{employees[1].firstName}</td>
+                <td>{employees[1].lastName}</td>
+            </tr>
+            <tr>
+                <td>{employees[2].firstName}</td>
+                <td>{employees[2].lastName}</td>
             </tr>
         </table>
     )
