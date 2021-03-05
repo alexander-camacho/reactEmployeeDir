@@ -1,19 +1,21 @@
 import React, { Component } from "react"
-import Table from "./Table"
 import Sort from "./Sort"
 
 const employees = [
     {
         firstName: "George",
-        lastName: "Washington"
+        lastName: "Washington",
+        title: "President"
     },
     {
         firstName: "Abraham",
-        lastName: "Lincoln"
+        lastName: "Lincoln",
+        title: "President"
     },
     {
         firstName: "John",
-        lastName: "Adams"
+        lastName: "Adams",
+        title: "Vice President"
     }
 ]
 
@@ -24,30 +26,32 @@ class TableContainer extends Component {
     }
 
 
-    
+
     handleTableChange = sorting => {
         this.setState({ tableState: sorting })
     }
 
     renderTableData = () => {
-        if (this.state.tableState === "default") {
-            return <Sort sorting="default" data={employees}/>
-        } else if (this.state.tableState === "sortFirst") {
-            return <Sort sorting="sortFirst" data={employees}/>
-        } else if (this.state.tableState === "sortLast") {
-            return <Sort sorting="sortLast" data={employees}/>
-        }
+        return <Sort sorting={this.state.tableState} data={employees} />
     }
 
     render() {
-        return (
-            <div>
-                <button onClick={() => this.handleTableChange("sortFirst")}>Sort by First Name</button>
-                <button onClick={() => this.handleTableChange("sortLast")}>Sort by Last Name</button>
-                <button>Filter</button>
-                <Table />
-                {this.renderTableData()}
-            </div>
+        return (<div>
+            <button onClick={() => this.handleTableChange("sortFirst")}>Sort by First Name</button>
+            <button onClick={() => this.handleTableChange("sortLast")}>Sort by Last Name</button>
+            <button>Filter</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.renderTableData()}
+                </tbody>
+            </table>
+        </div>
         )
     }
 }

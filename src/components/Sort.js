@@ -1,5 +1,7 @@
 import React from "react"
 
+
+// Sorts from a to z based on first name
 function compareFirst( a, b ) {
     if( a.firstName < b.firstName){
         return -1;
@@ -10,6 +12,7 @@ function compareFirst( a, b ) {
     return 0
 }
 
+// Sorts from a to z based on last name
 function compareLast( a, b ) {
     if( a.lastName < b.lastName){
         return -1;
@@ -24,31 +27,30 @@ function compareLast( a, b ) {
 function Sort(props) {
     
 
-    console.log(props)
     if(props.sorting === 'default'){
         return (
             props.data.map((value, index) => {
-                return <tr>
-                    <td key={index}>{value.firstName}</td>
-                    <td key={index}>{value.lastName}</td>
+                return <tr key={index}>
+                    <td>{value.firstName}</td>
+                    <td>{value.lastName}</td>
                 </tr>
             })
         )
     } else if(props.sorting === 'sortFirst') {
         return (
             props.data.sort(compareFirst).map((value, index) => {
-                return <tr>
-                    <td key={index}>{value.firstName}</td>
-                    <td key={index}>{value.lastName}</td>
+                return <tr key={index}>
+                    <td>{value.firstName}</td>
+                    <td>{value.lastName}</td>
                 </tr>
             })
         )
     } else if(props.sorting === 'sortLast') {
         return (
             props.data.sort(compareLast).map((value, index) => {
-                return <tr>
-                    <td key={index}>{value.firstName}</td>
-                    <td key={index}>{value.lastName}</td>
+                return <tr key={index}>
+                    <td>{value.firstName}</td>
+                    <td>{value.lastName}</td>
                 </tr>
             })
         )
