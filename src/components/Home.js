@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "./Table"
+import TableContainer from "./TableContainer";
 
 function Home() {
     return (
@@ -7,7 +7,7 @@ function Home() {
             <header className="App-header">
                 <h1>Welcome</h1>
                 <p>Check the list of employees below.</p>
-                <Table />
+                <TableContainer />
             </header>
         </div>
     )
