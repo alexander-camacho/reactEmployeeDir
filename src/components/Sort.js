@@ -25,7 +25,6 @@ function compareLast( a, b ) {
 
 
 function Sort(props) {
-    
 
     if(props.sorting === 'default'){
         return (
@@ -33,6 +32,7 @@ function Sort(props) {
                 return <tr key={index}>
                     <td>{value.firstName}</td>
                     <td>{value.lastName}</td>
+                    <td>{value.title}</td>
                 </tr>
             })
         )
@@ -42,6 +42,7 @@ function Sort(props) {
                 return <tr key={index}>
                     <td>{value.firstName}</td>
                     <td>{value.lastName}</td>
+                    <td>{value.title}</td>
                 </tr>
             })
         )
@@ -51,6 +52,17 @@ function Sort(props) {
                 return <tr key={index}>
                     <td>{value.firstName}</td>
                     <td>{value.lastName}</td>
+                    <td>{value.title}</td>
+                </tr>
+            })
+        )
+    } else if(props.sorting === 'presidents') {
+        return (
+            props.data.filter(function(person){return person.title === "President"}).map((value, index) => {
+                return <tr key={index}>
+                    <td>{value.firstName}</td>
+                    <td>{value.lastName}</td>
+                    <td>{value.title}</td>
                 </tr>
             })
         )

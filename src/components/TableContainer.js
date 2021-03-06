@@ -39,12 +39,13 @@ class TableContainer extends Component {
         return (<div>
             <button onClick={() => this.handleTableChange("sortFirst")}>Sort by First Name</button>
             <button onClick={() => this.handleTableChange("sortLast")}>Sort by Last Name</button>
-            <button>Filter</button>
+            <button onClick={() => this.handleTableChange("presidents")}>Show Presidents</button>
             <table>
                 <thead>
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>Title</th>
                     </tr>
                 </thead>
                 <tbody>

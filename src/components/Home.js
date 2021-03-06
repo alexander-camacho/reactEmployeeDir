@@ -6,7 +6,7 @@ function Home() {
         <div className="App">
             <header className="App-header">
                 <h1>Welcome</h1>
-                <p>Check the list of employees below.</p>
+                <p>Check the list of individuals below.</p>
                 <TableContainer />
             </header>
         </div>
