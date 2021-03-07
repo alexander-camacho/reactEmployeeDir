@@ -1,24 +1,7 @@
 import React, { Component } from "react"
 import Sort from "./Sort"
 import FilterBtn from "./FilterBtn"
-
-const employees = [
-    {
-        firstName: "George",
-        lastName: "Washington",
-        title: "President"
-    },
-    {
-        firstName: "Abraham",
-        lastName: "Lincoln",
-        title: "President"
-    },
-    {
-        firstName: "John",
-        lastName: "Adams",
-        title: "Vice President"
-    }
-]
+import employees from "../employees"
 
 
 class TableContainer extends Component {
@@ -38,10 +21,10 @@ class TableContainer extends Component {
 
     render() {
         return (<div>
-            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortFirst")}>Sort by First Name</button>
-            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortLast")}>Sort by Last Name</button>
+            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortFirst")}>Sort All by First Name</button>
+            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortLast")}>Sort All by Last Name</button>
             <FilterBtn data={employees} handleTableChange={this.handleTableChange}/>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>First Name</th>
