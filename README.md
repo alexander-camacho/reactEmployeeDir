@@ -17,7 +17,7 @@ The options are below:
 - Sort All by Last Name - Sorts the employees alphabetically by Last Name
 - Filter by Title - Displays a dropdown menu with an option for each job title, that allows the user to filter the employees by a specific job title.
 
-![Home](./assets/home.PNG)
+![Home](./assets/home.png)
 ## Questions?
 
 View more of my work at the Github link below or contact me at the email below.
