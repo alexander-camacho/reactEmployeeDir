@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Sort from "./Sort"
+import FilterBtn from "./FilterBtn"
 
 const employees = [
     {
@@ -37,9 +38,9 @@ class TableContainer extends Component {
 
     render() {
         return (<div>
-            <button onClick={() => this.handleTableChange("sortFirst")}>Sort by First Name</button>
-            <button onClick={() => this.handleTableChange("sortLast")}>Sort by Last Name</button>
-            <button onClick={() => this.handleTableChange("presidents")}>Show Presidents</button>
+            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortFirst")}>Sort by First Name</button>
+            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortLast")}>Sort by Last Name</button>
+            <FilterBtn data={employees} handleTableChange={this.handleTableChange}/>
             <table>
                 <thead>
                     <tr>

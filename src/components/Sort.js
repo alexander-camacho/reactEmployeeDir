@@ -56,9 +56,10 @@ function Sort(props) {
                 </tr>
             })
         )
-    } else if(props.sorting === 'presidents') {
+    } else {
+        console.log(props)
         return (
-            props.data.filter(function(person){return person.title === "President"}).map((value, index) => {
+            props.data.filter(function(person){return person.title === props.sorting}).map((value, index) => {
                 return <tr key={index}>
                     <td>{value.firstName}</td>
                     <td>{value.lastName}</td>
