@@ -5,8 +5,12 @@ function Home() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Welcome</h1>
-                <p>Check the list of individuals below.</p>
+                <h1 className="text-center">
+                    Employee Tracker
+                    </h1>
+                <p className="text-center">
+                    Search through the employees using the buttons below!
+                    </p>
                 <TableContainer />
             </header>
         </div>

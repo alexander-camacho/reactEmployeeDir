@@ -25,49 +25,43 @@ function compareLast( a, b ) {
 
 
 function Sort(props) {
-
+    
+    function rowData(index, value) {
+        return <tr key={index}>
+            <th scope="row">{index + 1}</th>
+            <td>{value.firstName}</td>
+            <td>{value.lastName}</td>
+            <td>{value.title}</td>
+        </tr>;
+    }
+    
     if(props.sorting === 'default'){
         return (
             props.data.map((value, index) => {
-                return <tr key={index}>
-                    <td>{value.firstName}</td>
-                    <td>{value.lastName}</td>
-                    <td>{value.title}</td>
-                </tr>
+                return rowData(index, value)
             })
         )
     } else if(props.sorting === 'sortFirst') {
         return (
             props.data.sort(compareFirst).map((value, index) => {
-                return <tr key={index}>
-                    <td>{value.firstName}</td>
-                    <td>{value.lastName}</td>
-                    <td>{value.title}</td>
-                </tr>
+                return rowData(index, value)
             })
         )
     } else if(props.sorting === 'sortLast') {
         return (
             props.data.sort(compareLast).map((value, index) => {
-                return <tr key={index}>
-                    <td>{value.firstName}</td>
-                    <td>{value.lastName}</td>
-                    <td>{value.title}</td>
-                </tr>
+                return rowData(index, value)
             })
         )
     } else {
         console.log(props)
         return (
             props.data.filter(function(person){return person.title === props.sorting}).map((value, index) => {
-                return <tr key={index}>
-                    <td>{value.firstName}</td>
-                    <td>{value.lastName}</td>
-                    <td>{value.title}</td>
-                </tr>
+                return rowData(index, value)
             })
         )
     }
+
 }
 
 export default Sort

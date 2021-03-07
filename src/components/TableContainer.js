@@ -20,23 +20,36 @@ class TableContainer extends Component {
     }
 
     render() {
-        return (<div>
-            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortFirst")}>Sort All by First Name</button>
-            <button className="btn btn-primary" onClick={() => this.handleTableChange("sortLast")}>Sort All by Last Name</button>
-            <FilterBtn data={employees} handleTableChange={this.handleTableChange}/>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Title</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.renderTableData()}
-                </tbody>
-            </table>
-        </div>
+        return (
+            <div className="text-center">
+                <button
+                    className="btn btn-primary"
+                    onClick={() => this.handleTableChange("sortFirst")}>
+                    Sort All by First Name
+                </button>
+                <button
+                    className="btn btn-primary"
+                    onClick={() => this.handleTableChange("sortLast")}>
+                    Sort All by Last Name
+                    </button>
+                <FilterBtn
+                    data={employees}
+                    handleTableChange={this.handleTableChange} />
+                <table
+                    className="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderTableData()}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
